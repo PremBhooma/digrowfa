@@ -5,17 +5,15 @@ const moment = require("moment");
 const formSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
     },
     description: {
         type: String,
-        required: true,
     },
     faq: [
         {
             question: {
                 type: String,
-                required: true,
+                required: true
             },
             answers: [
                 {
