@@ -12,7 +12,9 @@ const TableForm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8010/formData/");
+        const response = await axios.get(
+          "https://digrowfa-backend.onrender.com/formData/"
+        );
         setFormDL(response.data.form);
         setSortedFD(response.data.form);
       } catch (error) {

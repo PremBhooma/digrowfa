@@ -37,7 +37,10 @@ const InputForm = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:8010/formData/create", formData);
+      await axios.post(
+        "https://digrowfa-backend.onrender.com/formData/create",
+        formData
+      );
       console.log("Form submitted successfully!");
       navigate(`/tableform`);
       // You can handle success in your application state
