@@ -5,10 +5,10 @@ const { FormModel } = require("../models/Form.model")
 const formRouter = Router()
 
 formRouter.post("/create", async (req, res) => {
-    const { title, description, faq } = req.body
+    const { name, description, faq } = req.body
 
     const new_form = new FormModel({
-        title,
+        name,
         description,
         faq
     })

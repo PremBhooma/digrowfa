@@ -1,10 +1,10 @@
 import './App.css';
-import InputForm from './Components/InputForm';
+import { AllRoutes } from './Routes/AllRoutes';
 
 function App() {
   return (
     <div>
-      <InputForm />
+      <AllRoutes />
     </div>
   );
 }
