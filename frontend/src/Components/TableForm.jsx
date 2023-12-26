@@ -5,16 +5,16 @@ import moment from "moment";
 import "./InputF.css";
 
 const TableForm = () => {
-  const [formDataList, setFormDataList] = useState([]);
-  const [sortedFormData, setSortedFormData] = useState([]);
+  const [formDataList, setFormDL] = useState([]);
+  const [sortedFormData, setSortedFD] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:8010/formData/");
-        setFormDataList(response.data.form);
-        setSortedFormData(response.data.form);
+        setFormDL(response.data.form);
+        setSortedFD(response.data.form);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -40,7 +40,7 @@ const TableForm = () => {
         return a[field] > b[field] ? 1 : -1;
       }
     });
-    setSortedFormData(sortedData);
+    setSortedFD(sortedData);
   };
 
   const handleSearch = () => {
@@ -50,7 +50,7 @@ const TableForm = () => {
         (item.name && item.name.toLowerCase().includes(searchTermLower)) ||
         (item._id && item._id.toLowerCase().includes(searchTermLower))
     );
-    setSortedFormData(filteredData);
+    setSortedFD(filteredData);
   };
 
   return (
