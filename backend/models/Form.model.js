@@ -13,13 +13,14 @@ const formSchema = new mongoose.Schema({
         {
             question: {
                 type: String,
-                required: true
+                required: true,
+                answers: [
+                    {
+                        type: String,
+                    },
+                ],
             },
-            answers: [
-                {
-                    type: String,
-                },
-            ],
+
         },
     ],
     postDate: {
