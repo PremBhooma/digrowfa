@@ -102,10 +102,13 @@ const TableForm = () => {
                         <p className="m-0">{faq.question}</p>
                       </div>
                       <div>
-                        <p className="m-0 fw-medium">Answers:</p>
+                        {/* <p className="m-0 fw-medium">Answers:</p> */}
                         <ol>
-                          {faq.answers.map((answer, index) => (
-                            <li key={index}>{answer}</li>
+                          {faq.answers.map((answer, ansIndex) => (
+                            <li key={ansIndex}>
+                              <span className="m-0 fw-medium">Answer </span>
+                              {`${ansIndex + 1}: ${answer}`}
+                            </li>
                           ))}
                         </ol>
                       </div>
